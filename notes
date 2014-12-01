@@ -1,0 +1,32 @@
+Models:
+Project
+belongs_to :owner, class_name: 'User'
+has_many: rewards
+has_many :backers, through: :pledges, class_name: 'User'
+name
+funding_goal
+end_date
+start_date
+description
+photo
+
+User(Project owner, Backer)
+has_many:owned_projects, class_name:'Project'
+has_many :backed_projects, through: :pledges, class_name: 'Project"'
+first_name
+last_name
+password
+email
+
+Reward
+belongs_to: project
+amount
+description
+backer_limit
+
+Pledge
+
+amount
+belongs_to:user
+belongs_to:reward
+amount
